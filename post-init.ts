@@ -76,5 +76,5 @@ await $`echo "bunx prettier --write ." >> .husky/pre-commit`;
 await $`git add --all .`.quiet();
 await $`git commit -m "Initial commit@"`.quiet();
 
-await $`git remote add origin ${giturl}`;
+await $`git remote add origin "${giturl}"`;
 await $`git push -u origin master`;
