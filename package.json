@@ -10,6 +10,8 @@
     "husky": "latest"
   },
   "dependencies": {
+    "@thi.ng/malloc": "^6.1.72",
+    "type-fest": "^4.12.0",
     "zod": "latest"
   },
   "scripts": {
