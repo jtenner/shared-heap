@@ -66,8 +66,8 @@ ${license}
 await $`echo ${license} > LICENSE`;
 await $`echo ${readme} > readme.md`;
 await $`mkdir src`;
-await $`echo -n "" > src/index.ts`;
-await $`echo -n "" > src/index.spec.ts`;
+await $`touch src/index.ts`;
+await $`touch src/index.spec.ts`;
 // setup husky
 await $`echo "bun test" > .husky/pre-commit`;
 await $`echo "bunx prettier --write ." >> .husky/pre-commit`;
