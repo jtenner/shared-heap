@@ -1,5 +1,5 @@
 import { $ } from "bun";
-import { basename } from "path";
+import { dirname } from "path";
 const { path } = import.meta;
 const folderName = dirname(path);
 
