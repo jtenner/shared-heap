@@ -13,9 +13,6 @@
     "zod": "latest"
   },
   "scripts": {
-    "start": "bun prettier && bun prettier-watch",
-    "prettier": "prettier --write .",
-    "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
-    "prepare": "husky"
+    "start": "exit 0"
   }
 }
