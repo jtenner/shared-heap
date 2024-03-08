@@ -13,6 +13,7 @@ await $`bunx husky init`;
 const username = (await $`git config --global user.name`.quiet().then(e => e.text())).trim();
 const email = (await $`git config --global user.email`.quiet().then(e => e.text())).trim();
 const year = new Date().getFullYear();
+const giturl = `https://github.com/${username}/${folderName}.git`;
 
 // Create MIT license
 
@@ -75,5 +76,5 @@ await $`echo "bunx prettier --write ." >> .husky/pre-commit`;
 await $`git add --all .`.quiet();
 await $`git commit -m "Initial commit@"`.quiet();
 
-await $`git remote add origin https://github.com/${username}/${folderName}.git`;
+await $`git remote add origin ${giturl}`;
 await $`git push -u origin master`;
