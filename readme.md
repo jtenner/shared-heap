@@ -1,24 +1,22 @@
-import { $ } from "bun";
-import { dirname } from "path";
-const { path } = import.meta;
-const folderName = dirname(path);
+# /home/jtenner/projects/shared-heap
 
-// delete the post-install script
-await $`rm post-init.ts`;
+## Installation
 
-// initialize husky
-await $`bunx husky init`;
+```sh
+bun install /home/jtenner/projects/shared-heap
+```
 
-// get the username and email
-const username = (await $`git config --global user.name`.then(e => e.text())).trim();
-const email = (await $`git config --global user.email`.then(e => e.text())).trim();
-const year = new Date().getFullYear();
+## Usage
 
-// Create MIT license
+## API
 
-const license = `MIT License
+## CLI
 
-Copyright (c) ${year} ${username} <${email}>
+## License
+
+MIT License
+
+Copyright (c) 2024 jtenner <tenner.joshua@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -37,34 +35,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-`;
-
-const readme = `# ${folderName}
-
-## Installation
-
-\`\`\`sh
-bun install ${folderName}
-\`\`\`
-
-## Usage
-
-## API
-
-## CLI
-
-## License
-
-${license}
-`;
 
 
-// setup the git repository
-await $`echo ${license} > LICENSE`;
-await $`echo ${readme} > readme.md`;
-
-await $`git add --all .`;
-await $`git commit -m "Initial commit"`;
-
-await $`git remote add origin https://github.com/${username.trim()}/${folderName}.git`;
-await $`git push -u origin master`;
