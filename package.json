@@ -13,7 +13,6 @@
     "zod": "latest"
   },
   "scripts": {
-    "start": "exit 0",
-    "prepare": "husky"
+    "start": "exit 0"
   }
 }
