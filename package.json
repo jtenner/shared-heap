@@ -1,0 +1,20 @@
+{
+  "name": "shared-heap",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "prettier": "latest",
+    "typescript": "latest",
+    "onchange": "latest",
+    "husky": "latest"
+  },
+  "dependencies": {
+    "zod": "latest"
+  },
+  "scripts": {
+    "start": "bun prettier && bun prettier-watch",
+    "prettier": "prettier --write .",
+    "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
+  }
+}
