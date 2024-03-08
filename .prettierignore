@@ -1,3 +1,7 @@
 lib
 node_modules
 package.json
+.prettierrc
+readme.md
+tsconfig.json
+.prettierignore
